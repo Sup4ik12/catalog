@@ -15,6 +15,27 @@ namespace каталог
         public mainForm()
         {
             InitializeComponent();
+            filtrPanel.Height = hideBut.Height;
+        }
+
+        private void hideBut_Click(object sender, EventArgs e)
+        {
+            if(filtrPanel.Height>hideBut.Height)
+            {
+                filtrPanel.Height = hideBut.Height;
+                hideBut.Text = "Развернуть";
+            }
+            else
+            {
+                filtrPanel.Height = 131;
+                hideBut.Text = "Свернуть";
+            }
+        }
+
+        private void picture_Click(object sender, EventArgs e)
+        {
+            GameForm gameForm = new GameForm();
+            gameForm.ShowDialog();
         }
     }
 }
