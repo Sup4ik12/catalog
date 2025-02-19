@@ -49,6 +49,7 @@
             this.gamePic.Location = new System.Drawing.Point(38, 108);
             this.gamePic.Name = "gamePic";
             this.gamePic.Size = new System.Drawing.Size(363, 422);
+            this.gamePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gamePic.TabIndex = 1;
             this.gamePic.TabStop = false;
             // 

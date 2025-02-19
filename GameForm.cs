@@ -10,16 +10,20 @@ using System.Windows.Forms;
 
 namespace каталог
 {
+
     public partial class GameForm : Form
     {
-        public GameForm()
+        public GameForm(string name)
         {
             InitializeComponent();
+            Text = name;
+            nameLab.Text = name;
+            gamePic.Load("../../pictures/" + name + ".jpg");
         }
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
