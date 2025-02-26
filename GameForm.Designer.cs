@@ -32,6 +32,7 @@
             this.gamePic = new System.Windows.Forms.PictureBox();
             this.styleLab = new System.Windows.Forms.Label();
             this.deskText = new System.Windows.Forms.TextBox();
+            this.priceLab = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gamePic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,7 +41,7 @@
             this.nameLab.AutoSize = true;
             this.nameLab.Location = new System.Drawing.Point(37, 32);
             this.nameLab.Name = "nameLab";
-            this.nameLab.Size = new System.Drawing.Size(64, 25);
+            this.nameLab.Size = new System.Drawing.Size(51, 20);
             this.nameLab.TabIndex = 0;
             this.nameLab.Text = "label1";
             // 
@@ -58,7 +59,7 @@
             this.styleLab.AutoSize = true;
             this.styleLab.Location = new System.Drawing.Point(487, 40);
             this.styleLab.Name = "styleLab";
-            this.styleLab.Size = new System.Drawing.Size(64, 25);
+            this.styleLab.Size = new System.Drawing.Size(51, 20);
             this.styleLab.TabIndex = 2;
             this.styleLab.Text = "label1";
             // 
@@ -70,11 +71,21 @@
             this.deskText.Size = new System.Drawing.Size(503, 436);
             this.deskText.TabIndex = 3;
             // 
+            // priceLab
+            // 
+            this.priceLab.AutoSize = true;
+            this.priceLab.Location = new System.Drawing.Point(886, 552);
+            this.priceLab.Name = "priceLab";
+            this.priceLab.Size = new System.Drawing.Size(51, 20);
+            this.priceLab.TabIndex = 4;
+            this.priceLab.Text = "label1";
+            // 
             // GameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 628);
+            this.Controls.Add(this.priceLab);
             this.Controls.Add(this.deskText);
             this.Controls.Add(this.styleLab);
             this.Controls.Add(this.gamePic);
@@ -96,5 +107,6 @@
         private System.Windows.Forms.PictureBox gamePic;
         private System.Windows.Forms.Label styleLab;
         private System.Windows.Forms.TextBox deskText;
+        private System.Windows.Forms.Label priceLab;
     }
 }

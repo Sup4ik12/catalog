@@ -7,23 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using System.Xml;
 
 namespace каталог
 {
-
     public partial class GameForm : Form
     {
-        public GameForm(string name)
+        public GameForm(Game game)
         {
             InitializeComponent();
-            Text = name;
-            nameLab.Text = name;
-            gamePic.Load("../../pictures/" + name + ".jpg");
+            Text = game.name;
+            nameLab.Text = "Название: "+game.name;
+            gamePic.Image = game.pb.Image;        
+            styleLab.Text = "Жанр: "+game.style;
+            priceLab.Text = "Цена: $" + game.price ;
         }
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
