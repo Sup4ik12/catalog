@@ -46,13 +46,7 @@ namespace каталог
         {
             InitializeComponent();
             filtrPanel.Height = hideBut.Height;
-
-            /*game_list[0] = new Game("Half-Life", "Шутер", "однопользовательский", 200);
-            game_list[1] = new Game("Dota2", "Стратегия", "многопользовательский", 300);
-            game_list[2] = new Game("Mafia 2", "Экшен", "однопользовательский", 100);
-            game_list[3] = new Game("Assassin's Creed II", "Приключение", "однопользовательский", 400);
-            game_list[4] = new Game("S.T.A.L.K.E.R.", "Ролевая игра", "гибридный", 500);
-            game_list[5] = new Game("Minecraft", "Песочница", "гибридный", 1000);*/
+            nameLab.Visible = false;
 
             game_list.Clear();
             string[] strs = System.IO.File.ReadAllLines("games.txt");
@@ -187,8 +181,45 @@ namespace каталог
 
         private void logbut_Click(object sender, EventArgs e)
         {
-            LogForm logForm = new LogForm();
-            logForm.ShowDialog();
+            if(logbut.Text == "Войти")
+            {
+                LogForm logForm = new LogForm();
+                logForm.ShowDialog();
+                if(LogForm.login != "")
+                {
+                    nameLab.Text = "Вы авторизовались как" + " " + LogForm.name + " " + LogForm.surename;
+                    nameLab.Visible = true;
+                    logbut.Text = "Выйти";
+                }
+            }
+            else
+            {
+                LogForm.isAdmin = false;
+                nameLab.Text = "";
+                nameLab.Visible = false;
+                logbut.Text = "Вoйти";
+                LogForm.login = "";
+                LogForm.surename = "";
+                LogForm.name = "";
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void AddToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(LogForm.isAdmin == true)
+            {
+                AddForm add = new AddForm();
+                add.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Добавлять объекты может только администратор");
+            }
         }
     }
 }

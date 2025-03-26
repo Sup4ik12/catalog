@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.regPanel = new System.Windows.Forms.Panel();
+            this.nameLab = new System.Windows.Forms.Label();
             this.logbut = new System.Windows.Forms.Button();
             this.regBut = new System.Windows.Forms.Button();
             this.filtrPanel = new System.Windows.Forms.Panel();
@@ -43,13 +45,17 @@
             this.hideBut = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.AddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regPanel.SuspendLayout();
             this.filtrPanel.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // regPanel
             // 
             this.regPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.regPanel.Controls.Add(this.nameLab);
             this.regPanel.Controls.Add(this.logbut);
             this.regPanel.Controls.Add(this.regBut);
             this.regPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,6 +63,15 @@
             this.regPanel.Name = "regPanel";
             this.regPanel.Size = new System.Drawing.Size(1060, 57);
             this.regPanel.TabIndex = 0;
+            // 
+            // nameLab
+            // 
+            this.nameLab.AutoSize = true;
+            this.nameLab.Location = new System.Drawing.Point(396, 20);
+            this.nameLab.Name = "nameLab";
+            this.nameLab.Size = new System.Drawing.Size(64, 25);
+            this.nameLab.TabIndex = 6;
+            this.nameLab.Text = "label1";
             // 
             // logbut
             // 
@@ -72,7 +87,7 @@
             // 
             this.regBut.Location = new System.Drawing.Point(24, 12);
             this.regBut.Name = "regBut";
-            this.regBut.Size = new System.Drawing.Size(191, 37);
+            this.regBut.Size = new System.Drawing.Size(216, 37);
             this.regBut.TabIndex = 4;
             this.regBut.Text = "Зарегистрироваться";
             this.regBut.UseVisualStyleBackColor = true;
@@ -80,7 +95,7 @@
             // 
             // filtrPanel
             // 
-            this.filtrPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.filtrPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.filtrPanel.Controls.Add(this.label6);
             this.filtrPanel.Controls.Add(this.modeCBox);
             this.filtrPanel.Controls.Add(this.PriceTextbox);
@@ -165,7 +180,9 @@
             "Выживание",
             "Песочница",
             "Экшен",
-            "Ролевая игра"});
+            "Ролевая игра",
+            "RPG",
+            "Королевкая битва"});
             this.styleBox.Location = new System.Drawing.Point(376, 38);
             this.styleBox.Name = "styleBox";
             this.styleBox.Size = new System.Drawing.Size(196, 33);
@@ -201,13 +218,30 @@
             // menuPanel
             // 
             this.menuPanel.AutoScroll = true;
-            this.menuPanel.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.menuPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuPanel.ContextMenuStrip = this.contextMenuStrip1;
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuPanel.Location = new System.Drawing.Point(0, 188);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(1060, 461);
             this.menuPanel.TabIndex = 2;
             this.menuPanel.Resize += new System.EventHandler(this.menuPanel_Resize);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(198, 28);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // AddToolStripMenuItem
+            // 
+            this.AddToolStripMenuItem.Name = "AddToolStripMenuItem";
+            this.AddToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
+            this.AddToolStripMenuItem.Text = "Добавить объект";
+            this.AddToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -222,8 +256,10 @@
             this.Name = "mainForm";
             this.Text = "Form1";
             this.regPanel.ResumeLayout(false);
+            this.regPanel.PerformLayout();
             this.filtrPanel.ResumeLayout(false);
             this.filtrPanel.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -245,6 +281,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox modeCBox;
         private System.Windows.Forms.Button logbut;
+        private System.Windows.Forms.Label nameLab;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem AddToolStripMenuItem;
     }
 }
 

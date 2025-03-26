@@ -12,8 +12,11 @@ namespace каталог
 {
     public partial class LogForm: Form
     {
-        public static string name;
-        public static string surename;
+        public static string name = "";
+        public static string surename= "";
+        public static string login = "";
+        public static bool isAdmin = false;
+
         public LogForm()
         {
             InitializeComponent();
@@ -29,6 +32,8 @@ namespace каталог
                 {
                     name = parts[0];
                     surename = parts[1];
+                    login = parts[2];
+                    isAdmin = (parts[4]=="1");
                     MessageBox.Show("Вы успешно вошли в свой аккаунт");
                     Close();
                     return;

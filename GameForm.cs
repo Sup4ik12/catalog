@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml;
+using System.IO;
 
 namespace каталог
 {
@@ -21,7 +22,8 @@ namespace каталог
             nameLab.Text = "Название: "+game.name;
             gamePic.Image = game.pb.Image;        
             styleLab.Text = "Жанр: "+game.style;
-            priceLab.Text = "Цена: $" + game.price ;
+            priceLab.Text = "Цена: $" + game.price;
+            deskText.Text = File.ReadAllText("../../pictures/" + game.name + ".txt");
         }
 
         private void GameForm_Load(object sender, EventArgs e)

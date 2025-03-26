@@ -32,7 +32,7 @@ namespace каталог
                     System.IO.File.AppendAllText("users.txt", nameText.Text + ", " +
                                                            sureText.Text + ", " +
                                                            logText.Text + ", " +
-                                                           passText.Text +
+                                                           passText.Text + ", " + "0" +
                                                            Environment.NewLine);
                     MessageBox.Show("Регистрация прошла успешно");
                     Close();
